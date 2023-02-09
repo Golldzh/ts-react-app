@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Card, { CardVariant } from './components/Card';
+import EventsExample from './components/EventsExample';
 import List from './components/List';
 import TodoItem from './components/TodoItem';
 import UserItem from './components/UserItem';
@@ -31,25 +32,29 @@ const App = () => {
       alert(e)
     } 
   }
-
+  const [value, setValue] = useState<boolean>(false);
   return (
     <div>
       <Card 
         variant={CardVariant.outlined}
-        width='200px' 
-        height='200px'
+        width='500px' 
+        height='50px'
         onClick={()=> console.log('click')}
       >
-        <button>Кнопка</button>
-        <div>sdfvdf</div>
+        <EventsExample value ={value} setValue={setValue}/>
       </Card>
       <List items = {users}
             renderItem={(user:IUser) => <UserItem user={user} key={user.id}/>}
       />
-      <h2 style={{margin: 10, textAlign: 'center'}}> ToDo:</h2>
-      <List items = {todos}
-            renderItem={(todo:ITodo) => <TodoItem todo={todo} key={todo.id}/>}
-      />
+      {
+        value &&
+        <div>
+          <h2 style={{margin: 10, textAlign: 'center'}}> ToDo:</h2>
+          <List items = {todos}
+              renderItem={(todo:ITodo) => <TodoItem todo={todo} key={todo.id}/>}
+          />
+        </div>
+      }
     </div>
   );
 };

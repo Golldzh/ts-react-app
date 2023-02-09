@@ -26,7 +26,13 @@ const Card: FC<CardProps> =
           width, 
           height, 
           border: variant === CardVariant.outlined ? '1px solid gray' : 'none',
-          background: variant === CardVariant.primary ? 'lightgrey' : ''}}
+          background: variant === CardVariant.primary ? 'lightgrey' : '',
+          display: "flex",
+          justifyContent: 'center',
+          margin:'0 auto',
+          alignItems: 'center',
+          marginBottom: 20,
+        }}
         onClick={onClick}
       >
         {children}
