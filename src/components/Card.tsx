@@ -25,7 +25,7 @@ const Card: FC<CardProps> =
         style = {{
           width, 
           height, 
-          border: variant === CardVariant.outlined ? '10px solid gray' : 'none',
+          border: variant === CardVariant.outlined ? '1px solid gray' : 'none',
           background: variant === CardVariant.primary ? 'lightgrey' : ''}}
         onClick={onClick}
       >

@@ -1,14 +1,17 @@
-import React, { FC, PropsWithChildren } from 'react';
+import React, { FC } from 'react';
 import { IUser } from '../types/types';
+import UserItem from './UserItem';
 
-interface UserListProps extends PropsWithChildren{
+interface UserListProps{
   users: IUser[]
 }
 const UserList: FC<UserListProps> = 
   ({users}) => {
     return (
       <div>
-
+        {users.map(user => 
+          <UserItem key={user.id} user={user}/>
+        )}
       </div>
     );
 };
