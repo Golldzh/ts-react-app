@@ -28,7 +28,7 @@ const Card: FC<CardProps> =
           border: variant === CardVariant.outlined ? '1px solid gray' : 'none',
           background: variant === CardVariant.primary ? 'lightgrey' : '',
           display: "flex",
-          justifyContent: 'center',
+          justifyContent: 'space-around',
           margin:'0 auto',
           alignItems: 'center',
           marginBottom: 20,
